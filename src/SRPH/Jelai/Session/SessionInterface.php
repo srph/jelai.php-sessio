@@ -1,4 +1,4 @@
-<?php namespace Core\Session;
+<?php namespace SRPH\Jelai\Session;
 
 interface SessionInterface {
 
