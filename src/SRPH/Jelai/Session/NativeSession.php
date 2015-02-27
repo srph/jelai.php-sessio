@@ -38,7 +38,7 @@ class NativeSession implements SessionInterface {
 	 */
 	public function get($key)
 	{
-		return isset($this->bag[$key])
+		return $this->has($key)
 			? $this->bag[$key]
 			: null;
 	}
@@ -64,18 +64,18 @@ class NativeSession implements SessionInterface {
 	 */
 	public function forget($key)
 	{
+		// If the provided key is an array (technically keys),
+		// we'd just iterate and unset each key.
 		if ( is_array($key) )
 		{
 			foreach($key as $offset)
 			{
 				unset($this->bag[$key]);
-				// session_unset($key);
 			}
 		}
 		else
 		{
 			unset($this->bag[$key]);
-			// session_unset($key);
 		}
 
 
