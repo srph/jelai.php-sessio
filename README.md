@@ -28,7 +28,7 @@ The abstraction simply provides an interface (```SessionInterface```).
 
 use SRPH\Jelai\Session\SessionInterface;
 
-class FileSession implements HashingInterface {
+class FileSession implements SessionInterface {
 	
 	public function get()
 	{
@@ -48,9 +48,8 @@ The interface is much more appreciated when paired with an *IoC Container*, wher
 
 ```php
 # Laravel 4.x
-<?php namespace MyApp\Hashing;
+<?php namespace MyApp\Session;
 
-use MyApp\Hashing\BcryptHasher;
 use Illuminate\Support\ServiceProvider;
 
 class HashingServiceProvider extends ServiceProvider {
@@ -60,7 +59,7 @@ class HashingServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->bind('SRPH\Jelai\Hashing\HashingInterface', 'MyApp\Hashing\BycryptHasher');
+		$this->app->bind('SRPH\Jelai\Session\SessionInterface', 'SRPH\Jelai\Session\NativeSession');
 	}
 }
 ```
