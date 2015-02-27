@@ -41,7 +41,7 @@ The interface is much more appreciated when paired with an *IoC Container*, wher
 
 use Illuminate\Support\ServiceProvider;
 
-class HashingServiceProvider extends ServiceProvider {
+class SessionServiceProvider extends ServiceProvider {
 	
 	/**
 	 * Bind `SRPH\Jelai\Hashing\HashingInterface` to `MyApp\Hashing\BycryptHasher`
@@ -52,8 +52,6 @@ class HashingServiceProvider extends ServiceProvider {
 	}
 }
 ```
-
-\* *This hashing abstraction is mostly a mimic of Laravel's hashing abstraction.*
 
 ## API
 
