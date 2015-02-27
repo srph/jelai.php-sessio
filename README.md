@@ -10,17 +10,6 @@ Please see this [gist](https://gist.github.com/srph/2e2d51d46dadfdbc38e3).
 
 The package provides a built-in for the native session (```$_SESSION```).
 
-```php
-require __DIR__ . '/path/to/src/SRPH/Jelai/Session\NativeSession.php';
-$session = new SRPH\Jelai\Session\NativeSession;
-
-$session->put('login', 1);
-$session->get('login'); // 1
-$session->forget('login');
-$session->has('login') // false
-$session->all(); // empty
-```
-
 The abstraction simply provides an interface (```SessionInterface```).
 
 ```php
@@ -84,11 +73,11 @@ Get the value of the given key.
 
 Put the key to the session with the given value
 
-- ```forget``` (*```string```* ```$key```);
+- ```forget``` (*```string```* ```$key```)
 
 Remove the provided key from the session.
 
-- ```clear``` (*```void```*);
+- ```clear``` (*```void```*)
 
 Clears the bag
 
@@ -100,13 +89,35 @@ Checks if the given key exists
 #### ```NativeSession```
 
 - ```all``` (*```void```*)
+
+```
+$session->all(); // 
+```
+
 - ```get``` (*```string```* ```$key```)
 - ```put``` (*```string```* ```$key```, *```mixed```* ```$value```) 
-- ```forget``` (*```string```* ```$key```);
-- ```clear``` (*```void```*);
+- ```forget``` (*```string```* ```$key```)
+- ```clear``` (*```void```*)
 - ```has``` (*```string```* ```$key```)
 
-\* *Check the example, [MD5Hasher](https://github.com/srph/jelai.php-hashing/blob/master/src/SRPH/Jelai/Hashing/MD5Hasher.php).*
+```php
+require __DIR__ . '/path/to/src/SRPH/Jelai/Session\NativeSession.php';
+$session = new SRPH\Jelai\Session\NativeSession;
+
+$session->put('login', 1);
+$session->get('login'); // 1
+$session->forget('login');
+$session->has('login') // false
+
+$session->put('login', 1);
+$session->put('yolo', 69);
+$session->all(); // array('login' => 1, 'yolo' => 69)
+
+$session->clear();
+$session->all() // empty
+```
+
+\* *Check the example, [NativeSession](https://github.com/srph/jelai.php-session/blob/master/src/SRPH/Jelai/Session/NativeSession.php).*
 
 ## Acknowledgement
 
