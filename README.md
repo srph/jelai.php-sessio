@@ -116,7 +116,7 @@ $session->all() // empty
 
 ## Acknowledgement
 
-**jelai.php-hashing** © 2015+, Kier Borromeo (srph). **jelai.php** is released under the [MIT](mit-license.org) license.
+**jelai.php-session** © 2015+, Kier Borromeo (srph). **jelai.php** is released under the [MIT](mit-license.org) license.
 
 > [srph.github.io](http://srph.github.io) &nbsp;&middot;&nbsp;
 > GitHub [@srph](https://github.com/srph) &nbsp;&middot;&nbsp;
