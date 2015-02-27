@@ -89,11 +89,6 @@ Checks if the given key exists
 #### ```NativeSession```
 
 - ```all``` (*```void```*)
-
-```
-$session->all(); // 
-```
-
 - ```get``` (*```string```* ```$key```)
 - ```put``` (*```string```* ```$key```, *```mixed```* ```$value```) 
 - ```forget``` (*```string```* ```$key```)
